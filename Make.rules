@@ -158,6 +158,7 @@ lib_target: $(JNI_DEP_FILE) $(JNI_LIB)
 $(JNI_LIB): $(JNI_OBJ)
 	$(LIBTOOL) --mode=link $(CC)                                      \
 		-dynamiclib                                               \
+		-shared -XCClinker -shared                                \
                 $(LIBTOOL_LINK_FLAG)                                      \
                 -version-info $(MAJOR):$(MINOR):$(MICRO)                  \
                 -rpath $(libdir) $(SHARED_LDFLAGS) $(LDFLAGS)             \
